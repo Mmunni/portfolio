@@ -1,0 +1,476 @@
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 8px;
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+}
+
+
+ /* Padding & Margin */ 
+ @for $i from 1 through 25{
+  .pt-#{$i * 5}{
+      padding-top: $i * 5px;
+      }
+      .pl-#{$i * 5}{
+      padding-left: $i * 5px;
+      }
+      .pr-#{$i * 5}{
+      padding-right: $i * 5px;
+      }
+      .pb-#{$i * 5}{
+      padding-bottom: $i * 5px;
+      }
+      .mt-#{$i * 5}{
+      margin-top: $i * 5px;
+      }
+      .mb-#{$i * 5}{
+      margin-bottom: $i * 5px;
+      }
+      .ml-#{$i * 5}{
+      margin-left: $i * 5px;
+      }
+      .mr-#{$i * 5}{
+      margin-right: $i * 5px;
+      }
+}
+// heightAuto
+.h-auto{
+  height: auto;
+}
+// text-align
+$align: left, center, right, justify;
+  @each $i in $align {
+      .text-#{$i} {
+      text-align: $i;
+  }
+}
+// heading font-size line-height font-weight
+$heading: (h1, 40px, 50px, 700), (h2, 32px, 40px, 600), (h3, 28px, 36px, 500), (h4, 24px,30px, 500), (h5, 20px, 24px, 500), (h6, 16px, 22px, 500);
+@each $name, $font-size, $line-height, $font-weight in $heading{
+#{$name} {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+}
+
+/* Flex CSS */
+$flex: flex, inline-flex;
+@each $i in $flex {
+.d-#{$i} {
+display: $i;
+}
+}
+
+// flex-direction
+$flex-dir: row, column, row-reverse, column-reverse;
+@each $i in $flex-dir {
+.flex-direction-#{$i} {
+flex-direction: $i;
+}
+}
+
+// justify-content
+$justify: start, center, end, evenly, space-around, space-between;
+@each $i in $justify {
+.justify-content-#{$i} {
+justify-content: $i;
+}
+}
+
+// align-items
+$align-items: start, center, end, stretch, baseline;
+@each $i in $align-items {
+.align-items-#{$i} {
+align-items: $i;
+}
+}
+
+// text-transform
+$transform: lowercase, capitalize, uppercase;
+@each $i in $transform {
+.text-#{$i} {
+text-transform: $i;
+}
+}
+
+.col-12 {
+  width: 100%;
+}
+
+$grid-columns: 12;
+$grid-xxl-breakpoint: 1400px;
+$grid-xl-breakpoint: 1200px;
+$grid-lg-breakpoint: 992px;
+$grid-md-breakpoint: 768px;
+$grid-sm-breakpoint: 576px;
+$grid-xs-breakpoint: 575px;
+
+@media (max-width: $grid-sm-breakpoint) {
+  .container{
+      width: 350px;
+  }
+}
+
+@media (min-width: $grid-md-breakpoint) {
+    .container{
+        width: 750px;
+    }
+    @for $i from 1 through $grid-columns {
+        .col-md-#{$i} {
+            width: (100 / 12) * $i * 1%;
+            padding: 15px;
+        }
+    }
+    /* Padding & Margin */ 
+    @for $i from 1 through 20{
+        .pt-md-#{$i * 5}{
+            padding-top: $i * 5px;
+            }
+            .pl-md-#{$i * 5}{
+            padding-left: $i * 5px;
+            }
+            .pr-md-#{$i * 5}{
+            padding-right: $i * 5px;
+            }
+            .pb-md-#{$i * 5}{
+            padding-bottom: $i * 5px;
+            }
+            .mt-md-#{$i * 5}{
+            margin-top: $i * 5px;
+            }
+            .mb-md-#{$i * 5}{
+            margin-bottom: $i * 5px;
+            }
+            .ml-md-#{$i * 5}{
+            margin-left: $i * 5px;
+            }
+            .mr-md-#{$i * 5}{
+            margin-right: $i * 5px;
+            }
+    }
+    // heightAuto
+    .h-auto{
+        height: auto;
+    }
+    // text-align
+    $align: left, center, right, justify;
+        @each $i in $align {
+            .text-md-#{$i} {
+            text-align: $i;
+        }
+    }
+    // heading font-size line-height font-weight
+    $heading: (h1-md, 40px, 50px, 700), (h2-md, 32px, 40px, 600), (h3-md, 28px, 36px, 500), (h4-md, 24px,30px, 500), (h5-md, 20px, 24px, 500), (h6-md, 16px, 22px, 500);
+
+@each $name, $font-size, $line-height, $font-weight in $heading{
+    #{$name} {
+        font-size: $font-size;
+        line-height: $line-height;
+        font-weight: $font-weight;
+    }
+}
+/* Flex CSS */
+$flex: flex, inline-flex;
+@each $i in $flex {
+  .d-md-#{$i} {
+    display: $i;
+  }
+}
+// flex-direction
+$flex-dir: row, column, row-reverse, column-reverse;
+@each $i in $flex-dir {
+  .flex-direction-md-#{$i} {
+    flex-direction: $i;
+  }
+}
+
+// justify-content
+$justify: start, center, end, evenly, space-around, space-between;
+@each $i in $justify {
+  .justify-content-md-#{$i} {
+    justify-content: $i;
+  }
+}
+
+// align-items
+$align-items: start, center, end, stretch, baseline;
+@each $i in $align-items {
+  .align-items-md-#{$i} {
+    align-items: $i;
+  }
+}
+
+// text-transform
+$transform: lowercase, capitalize, uppercase;
+@each $i in $transform {
+  .text-md-#{$i} {
+    text-transform: $i;
+  }
+}
+}
+
+@media (min-width: $grid-lg-breakpoint) {
+    .container{
+        width: 970px;
+    }
+    @for $i from 1 through $grid-columns {
+        .col-lg-#{$i} {
+            width: (100 / 12) * $i * 1%;
+            padding: 15px;
+        }
+    }
+    /* Padding & Margin */ 
+    @for $i from 1 through 20{
+        .pt-lg-#{$i * 5}{
+            padding-top: $i * 5px;
+            }
+            .pl-lg-#{$i * 5}{
+            padding-left: $i * 5px;
+            }
+            .pr-lg-#{$i * 5}{
+            padding-right: $i * 5px;
+            }
+            .pb-lg-#{$i * 5}{
+            padding-bottom: $i * 5px;
+            }
+            .mt-lg-#{$i * 5}{
+            margin-top: $i * 5px;
+            }
+            .mb-lg-#{$i * 5}{
+            margin-bottom: $i * 5px;
+            }
+            .ml-lg-#{$i * 5}{
+            margin-left: $i * 5px;
+            }
+            .mr-lg-#{$i * 5}{
+            margin-right: $i * 5px;
+            }
+    }
+    .h-lg-50{
+        height: 50vh;
+    }
+    /* Flex CSS */
+
+$flex: flex, inline-flex;
+@each $i in $flex {
+  .d-lg-#{$i} {
+    display: $i;
+  }
+}
+
+$flex-dir: row, column, row-reverse, column-reverse;
+@each $i in $flex-dir {
+  .flex-direction-lg-#{$i} {
+    flex-direction: $i;
+  }
+}
+
+$justify: start, center, end, evenly, space-around, space-between;
+
+@each $i in $justify {
+  .justify-content-lg-#{$i} {
+    justify-content: $i;
+  }
+}
+
+$align-items: start, center, end, stretch, baseline;
+
+@each $i in $align-items {
+  .align-items-lg-#{$i} {
+    align-items: $i;
+  }
+}
+
+$transform: lowercase, capitalize, uppercase;
+@each $i in $transform {
+  .text-lg-#{$i} {
+    text-transform: $i;
+  }
+}
+$heading: (h1-lg, 40px, 50px, 700), (h2-lg, 32px, 40px, 600), (h3-lg, 28px, 36px, 500), (h4-lg, 24px,30px, 500), (h5-lg, 20px, 24px, 500), (h6-lg, 16px, 22px, 500);
+
+@each $name, $font-size, $line-height, $font-weight in $heading{
+    #{$name} {
+        font-size: $font-size;
+        line-height: $line-height;
+        font-weight: $font-weight;
+    }
+}
+}
+
+@media (min-width: $grid-xl-breakpoint) {
+    .container{
+        width: 1140px;
+    }
+    @for $i from 1 through $grid-columns {
+        .col-xl-#{$i} {
+            width: (100 / 12) * $i * 1%;
+            padding: 15px;
+        }
+    }
+    /* Padding & Margin */ 
+    @for $i from 0 through 20{
+        .pt-xxl-#{$i * 5}{
+            padding-top: $i * 5px;
+            }
+            .pl-xl-#{$i * 5}{
+            padding-left: $i * 5px;
+            }
+            .pr-xl-#{$i * 5}{
+            padding-right: $i * 5px;
+            }
+            .pb-xl-#{$i * 5}{
+            padding-bottom: $i * 5px;
+            }
+            .mt-xl-#{$i * 5}{
+            margin-top: $i * 5px;
+            }
+            .mb-xl-#{$i * 5}{
+            margin-bottom: $i * 5px;
+            }
+            .ml-xl-#{$i * 5}{
+            margin-left: $i * 5px;
+            }
+            .mr-xl-#{$i * 5}{
+            margin-right: $i * 5px;
+            }
+    }
+    /* Flex CSS */
+
+$flex: flex, inline-flex;
+@each $i in $flex {
+  .d-xl-#{$i} {
+    display: $i;
+  }
+}
+
+$flex-dir: row, column, row-reverse, column-reverse;
+@each $i in $flex-dir {
+  .flex-direction-xl-#{$i} {
+    flex-direction: $i;
+  }
+}
+
+$justify: start, center, end, evenly, space-around, space-between;
+
+@each $i in $justify {
+  .justify-content-xl-#{$i} {
+    justify-content: $i;
+  }
+}
+
+$align-items: start, center, end, stretch, baseline;
+
+@each $i in $align-items {
+  .align-items-xl-#{$i} {
+    align-items: $i;
+  }
+}
+
+$transform: lowercase, capitalize, uppercase;
+@each $i in $transform {
+  .text-xl-#{$i} {
+    text-transform: $i;
+  }
+}
+$heading: (h1-xl, 40px, 50px, 700), (h2-xl, 32px, 40px, 600), (h3-xl, 28px, 36px, 500), (h4-xl, 24px,30px, 500), (h5-xl, 20px, 24px, 500), (h6-xl, 16px, 22px, 500);
+
+@each $name, $font-size, $line-height, $font-weight in $heading{
+    #{$name} {
+        font-size: $font-size;
+        line-height: $line-height;
+        font-weight: $font-weight;
+    }
+}
+}
+
+@media (min-width: $grid-xxl-breakpoint) {
+    .container{
+        width: 1320px;
+    }
+    @for $i from 1 through $grid-columns {
+        .col-xxl-#{$i} {
+            width: (100 / 12) * $i * 1%;
+            padding: 15px;
+        }
+    }
+    /* Padding & Margin */ 
+    @for $i from 0 through 20{
+        .pt-xxl-#{$i * 5}{
+        padding-top: $i * 5px;
+        }
+        .pl-xxl-#{$i * 5}{
+        padding-left: $i * 5px;
+        }
+        .pr-xxl-#{$i * 5}{
+        padding-right: $i * 5px;
+        }
+        .pb-xxl-#{$i * 5}{
+        padding-bottom: $i * 5px;
+        }
+        .mt-xxl-#{$i * 5}{
+        margin-top: $i * 5px;
+        }
+        .mb-xxl-#{$i * 5}{
+        margin-bottom: $i * 5px;
+        }
+        .ml-xxl-#{$i * 5}{
+        margin-left: $i * 5px;
+        }
+        .mr-xxl-#{$i * 5}{
+        margin-right: $i * 5px;
+        }
+    }
+    /* Flex CSS */
+
+$flex: flex, inline-flex;
+@each $i in $flex {
+  .d-xxl-#{$i} {
+    display: $i;
+  }
+}
+
+$flex-dir: row, column, row-reverse, column-reverse;
+@each $i in $flex-dir {
+  .flex-direction-xxl-#{$i} {
+    flex-direction: $i;
+  }
+}
+
+$justify: start, center, end, evenly, space-around, space-between;
+
+@each $i in $justify {
+  .justify-content-xxl-#{$i} {
+    justify-content: $i;
+  }
+}
+
+$align-items: start, center, end, stretch, baseline;
+
+@each $i in $align-items {
+  .align-items-xxl-#{$i} {
+    align-items: $i;
+  }
+}
+
+$transform: lowercase, capitalize, uppercase;
+@each $i in $transform {
+  .text-xxl-#{$i} {
+    text-transform: $i;
+  }
+}
+$heading: (h1-xxl, 40px, 50px, 700), (h2-xxl, 32px, 40px, 600), (h3-xxl, 28px, 36px, 500), (h4-xxl, 24px,30px, 500), (h5-xxl, 20px, 24px, 500), (h6-xxl, 16px, 22px, 500);
+
+@each $name, $font-size, $line-height, $font-weight in $heading{
+    #{$name} {
+        font-size: $font-size;
+        line-height: $line-height;
+        font-weight: $font-weight;
+    }
+}
+}
